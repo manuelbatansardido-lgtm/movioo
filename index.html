@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Movioo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="landing-container">
+    <h1>Welcome to Movioo</h1>
+    <p>
+      This site provides access to movies and TV shows for entertainment purposes only.
+      Please ensure you comply with all applicable laws and regulations in your jurisdiction.
+      Movioo does not host any content and is not responsible for the legality of the content accessed.
+    </p>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search movies or TV shows..." />
+      <button id="search-button">Search</button>
+    </div>
+    <button id="enter-button">Enter Site</button>
+    <div class="info-section">
+      <h2>What is Movioo?</h2>
+      <p>Movioo is your ultimate destination for streaming movies, TV shows, and anime. Discover popular content, search for your favorites, and enjoy seamless playback with our integrated player.</p>
+      
+      <h2>Features</h2>
+      <ul>
+        <li>Browse popular movies and TV shows</li>
+        <li>Search for specific titles</li>
+        <li>Watch TV series with episode selection</li>
+        <li>Explore anime with sub/dub options</li>
+        <li>Responsive design for all devices</li>
+      </ul>
+      
+      <h2>Disclaimer</h2>
+      <p>All content is sourced from third-party providers. Movioo is a browser only and does not store or host any media files. Use at your own risk and ensure compliance with local laws.</p>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById('enter-button').addEventListener('click', () => {
+      window.location.href = 'home.html';
+    });
+
+    document.getElementById('search-button').addEventListener('click', () => {
+      const query = document.getElementById('search-input').value.trim();
+      if (query) {
+        window.location.href = `home.html?search=${encodeURIComponent(query)}`;
+      } else {
+        window.location.href = 'home.html';
+      }
+    });
+
+    document.getElementById('search-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const query = document.getElementById('search-input').value.trim();
+        if (query) {
+          window.location.href = `home.html?search=${encodeURIComponent(query)}`;
+        } else {
+          window.location.href = 'home.html';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

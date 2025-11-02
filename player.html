@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movioo - Video Player</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Movioo Logo" style="height: 50px; margin-right: 10px; vertical-align: middle;">
+    <h1 style="display: inline-block; vertical-align: middle;">Movioo</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="tv.html">TV Shows</a></li>
+        <li><a href="anime.html">Anime</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Categories ▼</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="loadCategory('popular')">Popular</a>
+            <a href="#" onclick="loadCategory('top_rated')">Top Rated</a>
+            <a href="#" onclick="loadCategory('upcoming')">Upcoming</a>
+            <a href="#" onclick="loadCategory('now_playing')">Now Playing</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Genres ▼</a>
+          <div class="dropdown-content">
+            <a href="#" onclick="loadGenre(28)">Action</a>
+            <a href="#" onclick="loadGenre(12)">Adventure</a>
+            <a href="#" onclick="loadGenre(16)">Animation</a>
+            <a href="#" onclick="loadGenre(35)">Comedy</a>
+            <a href="#" onclick="loadGenre(80)">Crime</a>
+            <a href="#" onclick="loadGenre(99)">Documentary</a>
+            <a href="#" onclick="loadGenre(18)">Drama</a>
+            <a href="#" onclick="loadGenre(10751)">Family</a>
+            <a href="#" onclick="loadGenre(14)">Fantasy</a>
+            <a href="#" onclick="loadGenre(36)">History</a>
+            <a href="#" onclick="loadGenre(27)">Horror</a>
+            <a href="#" onclick="loadGenre(10402)">Music</a>
+            <a href="#" onclick="loadGenre(9648)">Mystery</a>
+            <a href="#" onclick="loadGenre(10749)">Romance</a>
+            <a href="#" onclick="loadGenre(878)">Sci-Fi</a>
+            <a href="#" onclick="loadGenre(10770)">TV Movie</a>
+            <a href="#" onclick="loadGenre(53)">Thriller</a>
+            <a href="#" onclick="loadGenre(10752)">War</a>
+            <a href="#" onclick="loadGenre(37)">Western</a>
+          </div>
+        </li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search movies or TV shows..." />
+        <button id="search-button">Search</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="player-section">
+      <h2 id="video-title"></h2>
+      <div id="video-player-container"></div>
+      <div id="player-controls" class="hidden">
+        <label for="season-select" id="season-label" class="hidden">Season:</label>
+        <select id="season-select" class="hidden"></select>
+
+        <label for="episode-select" id="episode-label" class="hidden">Episode:</label>
+        <select id="episode-select" class="hidden"></select>
+
+        <label for="subdub-toggle" id="subdub-label" class="hidden">Sub/Dub:</label>
+        <select id="subdub-toggle" class="hidden">
+          <option value="sub">Sub</option>
+          <option value="dub">Dub</option>
+        </select>
+      </div>
+
+      <div id="movie-info" class="movie-info-section">
+        <h3 id="movie-title"></h3>
+        <p id="movie-overview"></p>
+        <p><strong>Rating:</strong> <span id="movie-rating"></span></p>
+      </div>
+
+      <div id="recommended-section">
+        <h3>Recommended</h3>
+        <div id="recommended-movies" class="movie-grid"></div>
+      </div>
+
+      <button id="close-player">Back</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by TMDb & Videasy.net | Movioo &copy; 2024</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/player.js"></script>
+</body>
+</html>
